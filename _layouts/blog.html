@@ -1,0 +1,86 @@
+---
+layout: "default"
+---
+
+<!-- Page Title -->
+<div class="page-title dark-background" style="background-image: url(assets/img/education/showcase-1.webp);">
+    <div class="container position-relative">
+        <h1>News</h1>
+        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
+            molestias.</p>
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li class="current">News</li>
+            </ol>
+        </nav>
+    </div>
+</div><!-- End Page Title -->
+
+<!-- News Hero Section -->
+<section id="news-hero" class="news-hero section">
+
+    <div class="container" data-aos="fade-up">
+
+        <div class="row g-4">
+            {% for post in site.posts %}
+                <!-- Left Side Posts -->
+                <div class="col-lg-4">
+                    <div class="side-posts">
+                        <!-- Side Post 1 -->
+                        <article class="post-item side-post" data-aos="fade-up" data-aos-delay="100">
+                            <div class="post-img">
+                                <img src="{{ post.image }}" alt="{{ post.title }}" class="img-fluid"
+                                    loading="lazy">
+                                <span class="category entertainment">{{ post.category }}</span>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title">
+                                    <a href="{{ post.url || relative_url }}">{{ post.title }}</a>
+                                </h3>
+                                <div class="post-meta">
+                                    <span>{{ post.date | date: "%-d %B %Y" }}</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>  
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</section><!-- /News Hero Section -->
+
+<!-- Pagination 2 Section -->
+<section id="pagination-2" class="pagination-2 section">
+
+    <div class="container">
+        <nav class="d-flex justify-content-center" aria-label="Page navigation">
+            <ul>
+                <li>
+                    <a href="#" aria-label="Previous page">
+                        <i class="bi bi-arrow-left"></i>
+                        <span class="d-none d-sm-inline">Previous</span>
+                    </a>
+                </li>
+
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="ellipsis">...</li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><a href="#">10</a></li>
+
+                <li>
+                    <a href="#" aria-label="Next page">
+                        <span class="d-none d-sm-inline">Next</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</section><!-- /Pagination 2 Section -->
